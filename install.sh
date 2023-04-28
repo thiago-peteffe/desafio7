@@ -1,6 +1,8 @@
 # Airflow needs a home. `~/airflow` is the default, but you can put it
 # somewhere else if you prefer (optional)
-export AIRFLOW_HOME=./airflow-data
+# Gets where this script (install.sh) is located.
+SOURCE_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)
+export AIRFLOW_HOME=${SOURCE_DIR}/airflow-data
 
 # Install Airflow using the constraints file
 AIRFLOW_VERSION=2.6.0
